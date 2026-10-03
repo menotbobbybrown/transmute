@@ -1,3 +1,8 @@
+import os
+
+# Must be set before onnxruntime (pulled in by pymupdf4llm) is loaded; it latches the opt-out at init.
+os.environ.setdefault("ORT_DISABLE_TELEMETRY", "1")
+
 from contextlib import asynccontextmanager
 import logging
 import re

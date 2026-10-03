@@ -34,6 +34,8 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 # Headless OpenGL: pyrender renders meshes offscreen via OSMesa (software Mesa).
 ENV PYOPENGL_PLATFORM=osmesa
+# onnxruntime>=1.30 (via pymupdf4llm -> pymupdf-layout) phones home to mobile.events.data.microsoft.com on Linux.
+ENV ORT_DISABLE_TELEMETRY=1
 
 # Install python dependencies
 COPY requirements.txt .
